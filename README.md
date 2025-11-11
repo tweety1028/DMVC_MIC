@@ -1,4 +1,3 @@
 # DMVC_MIC
-Implementation code for Deep Multi-View Clustering with Meta Information Compression
+Demo for Deep Multi-View Clustering With Meta Information Compression (TIP 2025).
 
- Coming soon 
