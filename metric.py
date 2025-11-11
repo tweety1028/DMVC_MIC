@@ -6,9 +6,9 @@ from torch.utils.data import DataLoader
 import numpy as np
 import torch
 from munkres import Munkres
-from network import NpGAT
+
 from sklearn import metrics
-from network import vis
+# from network import vis
 
 
 def cluster_acc(y_true, y_pred):
@@ -141,10 +141,10 @@ def valid(model, device, dataset, view, data_size, class_num,gat,epoch,vs,eval_h
 
             nmi1, ari1, acc1, pur1, f1 = evaluate(labels_vector, y_pred_1.cpu().numpy())
 
-            print('low-level-feature:ACC{} = {:.4f} NMI{} = {:.4f} ARI{} = {:.4f} PUR{}={:.4f}'.format(v + 1, acc1,
-                                                                                     v + 1, nmi1,
-                                                                                     v + 1, ari1,
-                                                                                     v + 1, pur1))
+            # print('low-level-feature:ACC{} = {:.4f} NMI{} = {:.4f} ARI{} = {:.4f} PUR{}={:.4f}'.format(v + 1, acc1,
+            #                                                                          v + 1, nmi1,
+            #                                                                          v + 1, ari1,
+            #                                                                          v + 1, pur1))
 
 
         aggregated_features_c = Zf
@@ -156,10 +156,10 @@ def valid(model, device, dataset, view, data_size, class_num,gat,epoch,vs,eval_h
                                 tol=1e-4, device=torch.device('cuda'))
         nmi3, ari3, acc3, pur3, f3 = evaluate(labels_vector, y_pred_all.cpu().numpy())
         nmi4, ari4, acc4, pur4, f4 = evaluate(labels_vector, y_pred_all1.cpu().numpy())
-        print('fussion-feature:ACC{} = {:.4f} NMI{} = {:.4f} ARI{} = {:.4f} PUR{}={:.4f}'.format(v + 1, acc4,
-                                                                                                   v + 1, nmi4,
-                                                                                                   v + 1, ari4,
-                                                                                                   v + 1, pur4))
+        # print('fussion-feature:ACC{} = {:.4f} NMI{} = {:.4f} ARI{} = {:.4f} PUR{}={:.4f}'.format(v + 1, acc4,
+        #                                                                                            v + 1, nmi4,
+        #                                                                                            v + 1, ari4,
+        #                                                                                            v + 1, pur4))
         print('Laplacian Smoothing...')
         print('weight-fussion-feature:ACC{} = {:.4f} NMI{} = {:.4f} ARI{} = {:.4f} PUR{}={:.4f}'.format(v + 1, acc3,
                                                                                  v + 1, nmi3,

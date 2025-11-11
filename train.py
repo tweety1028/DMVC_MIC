@@ -173,13 +173,6 @@ for i in range(T):
     epoch = 1
     while epoch <= args.mse_epochs:
         pretrain(epoch)
-        if epoch==1:
-         vs = False
-
-        if epoch%10==0:
-                vs=False
-                acc, nmi, ari, pur, f = valid(model, device, dataset, view, data_size, class_num, gat, 0,vs, eval_h=False)
-
         epoch += 1
 
     while epoch <= args.mse_epochs + args.con_epochs:
