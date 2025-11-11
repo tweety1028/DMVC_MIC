@@ -3,7 +3,7 @@ from torch.nn.functional import normalize
 import torch
 import torch.nn.functional as F
 import numpy
-
+from utils import *
 import matplotlib.pyplot as plt
 from sklearn.manifold import TSNE
 import matplotlib
