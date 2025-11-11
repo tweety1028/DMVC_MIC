@@ -134,8 +134,8 @@ def comp_regularize(epoch):
         tot_lossou +=loss2.item()
     print('Epoch {}'.format(epoch), 'Loss_all:{:.6f}'.format(tot_lossin / len(data_loader)))
     loss_all.append(tot_lossin / len(data_loader))
-    print('Epoch {}'.format(epoch), 'Loss_cva:{:.6f}'.format(tot_loss1 / len(data_loader)))
-    print('Epoch {}'.format(epoch), 'Loss_mic:{:.6f}'.format(tot_lossou / len(data_loader)))
+    # print('Epoch {}'.format(epoch), 'Loss_cva:{:.6f}'.format(tot_loss1 / len(data_loader)))
+    # print('Epoch {}'.format(epoch), 'Loss_mic:{:.6f}'.format(tot_lossou / len(data_loader)))
 
 if not os.path.exists('./models'):
     os.makedirs('./models')
@@ -200,8 +200,7 @@ for i in range(T):
 
 
 
-    tqdm.write('MAX: acc: {:.4f}, nmi: {:.4f}, ari: {:.4f}, pur: {:.4f},f1: {:.4f}, lam1: {}, lam2: {}, epoch: {}, seed: {}, lr: {}, wp: {}'.format(max_acc, max_nmi, max_ari, max_pur, max_f, lam1, lam2, max_epoch, seed, args.learning_rate, args.mse_epochs))
-    file = open("result_method.csv", "a+")
-    print('acc: {:.4f}, nmi: {:.4f}, ari: {:.4f}, pur: {:.4f},f1: {:.4f}, lam1: {}, lam2: {}, epoch: {}, seed: {},lr: {}, wp: {}'.format(max_acc, max_nmi, max_ari, max_pur, max_f, lam1, lam2, max_epoch, seed, args.learning_rate, args.mse_epochs), file=file)
+
+    print('Max: acc: {:.4f}, nmi: {:.4f}, ari: {:.4f}, pur: {:.4f},f1: {:.4f}, lam1: {}, lam2: {}, seed: {},lr: {}, wp: {}'.format(max_acc, max_nmi, max_ari, max_pur, max_f, lam1, lam2, seed, args.learning_rate, args.mse_epochs))
     file.close()
 
