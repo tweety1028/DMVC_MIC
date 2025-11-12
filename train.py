@@ -102,7 +102,7 @@ def comp_regularize(epoch):
     for batch_idx, (xs, _, _) in enumerate(data_loader):
         for v in range(view):
             xs[v] = xs[v].to(device)
-        optimizer.zero_grad()
+        optimizer1.zero_grad()
 
         xrs, zs, zc = model(xs)
         loss_inner = []
